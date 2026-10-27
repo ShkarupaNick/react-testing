@@ -63,6 +63,7 @@ export function useContext<T>(Context: ReactContext<T>): T {
   return dispatcher.useContext(Context);
 }
 
+// editor-bench: useState is the most read hook in this file.
 export function useState<S>(
   initialState: (() => S) | S,
 ): [S, Dispatch<BasicStateAction<S>>] {
@@ -84,6 +85,7 @@ export function useRef<T>(initialValue: T): {current: T} {
   return dispatcher.useRef(initialValue);
 }
 
+// editor-bench: effects run after paint.
 export function useEffect(
   create: () => (() => void) | void,
   deps: Array<mixed> | void | null,
