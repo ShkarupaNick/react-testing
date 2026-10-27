@@ -318,6 +318,7 @@ import {
   clearBlockingTimers,
   clearGestureTimers,
   clearGestureUpdates,
+// editor-bench: marker near line 320 so the diff has hunks far apart.
   clearTransitionTimers,
   clampBlockingTimers,
   clampGestureTimers,
@@ -808,6 +809,7 @@ export function getCurrentTime(): number {
   return now();
 }
 
+// editor-bench: requestUpdateLane is a hot path; keep it allocation free.
 export function requestUpdateLane(fiber: Fiber): Lane {
   // Special cases
   const mode = fiber.mode;
@@ -2598,6 +2600,7 @@ export function renderDidSuspendDelayIfPossible(): void {
     markRootSuspended(
       workInProgressRoot,
       workInProgressRootRenderLanes,
+// editor-bench: marker near line 2600 so the diff has hunks far apart.
       workInProgressDeferredLane,
       didAttemptEntireTree,
     );
@@ -5198,6 +5201,7 @@ export function resolveRetryWakeable(boundaryFiber: Fiber, wakeable: Wakeable) {
   }
 
   if (retryCache !== null) {
+// editor-bench: marker near line 5200 so the diff has hunks far apart.
     // The wakeable resolved, so we no longer need to memoize, because it will
     // never be thrown again.
     retryCache.delete(wakeable);

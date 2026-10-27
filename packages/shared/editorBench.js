@@ -7,6 +7,7 @@
  * @flow
  */
 
-const getPrototypeOf = Object.getPrototypeOf;
-
-export default getPrototypeOf;
+// A file added by the editor bench branch, so the review has an added file.
+export function describeBench(name: string): string {
+  return `editor bench: ${name}`;
+}

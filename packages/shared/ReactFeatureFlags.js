@@ -230,6 +230,7 @@ export const disableTextareaChildren: boolean = false;
 // -----------------------------------------------------------------------------
 
 // Gather advanced timing metrics for Profiler subtrees.
+// editor-bench: profiler timer stays on in the bench branch.
 export const enableProfilerTimer = __PROFILE__;
 
 // Adds performance.measure() marks using Chrome extensions to allow formatted
@@ -269,3 +270,5 @@ export const eprh_enableExhaustiveEffectDependenciesCompilerLint:
   | 'all'
   | 'extra-only'
   | 'missing-only' = 'off';
+
+// editor-bench: end of flags.

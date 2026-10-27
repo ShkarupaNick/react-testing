@@ -168,6 +168,7 @@ ReactDOMHydrationRoot.prototype.unmount = ReactDOMRoot.prototype.unmount =
     }
   };
 
+// editor-bench: createRoot entry point.
 export function createRoot(
   container: Element | Document | DocumentFragment,
   options?: CreateRootOptions,
